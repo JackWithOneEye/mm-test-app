@@ -3,7 +3,30 @@
     <div class="card-body">
       <h4 class="card-title mb-4">Intranet der Stadt Kassel</h4>
       <div class="row">
+        <!--
+          .row {
+            display: flex;
+            flex-wrap: wrap;
+            ...
+          }
+          The 'flex-wrap: wrap;' rule will realign this element's children into multiple lines (top to bottom) if they do not fit horizontally ('flex-direction: row;' is set by default).
+        -->
         <div class="col-md-4 mb-2">
+          <!--
+            .col-md-4 {
+              width: 100%;
+              ...
+            }
+            @media (min-width: 768px) {
+              .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                ...
+              }
+            }
+            As long as the width of the window is greater than 768 px, this div element occupies 33.3% of its parent's width at most ('max-width' overrides 'width').
+            If the window width shrinks below 768 px, the 'width' property will apply and this element will cover 100% of its parent's width.
+          -->
           <img class="img-fluid rounded"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Coat_of_arms_of_Kassel.svg/412px-Coat_of_arms_of_Kassel.svg.png">
         </div>
