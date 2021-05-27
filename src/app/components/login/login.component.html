@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card border-0 mt-3 mb-3">
+    <div class="card-body">
+      <h4 class="card-title mb-4">Intranet der Stadt Kassel</h4>
+      <div class="row">
+        <div class="col-md-4 mb-2">
+          <img class="img-fluid rounded"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Coat_of_arms_of_Kassel.svg/412px-Coat_of_arms_of_Kassel.svg.png">
+        </div>
+        <div class="col-md-8">
+          <form class="d-flex flex-column h-100" (ngSubmit)="submitCredentials()" #logInForm="ngForm">
+            <div class="form-group row">
+              <label for="email-input" class="col-form-label col-md-3">E-Mail:</label>
+              <div class="col-md-9">
+                <input class="form-control" id="eamil-input" type="email" name="email" [(ngModel)]="eMailInput"
+                  required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password-input" class="col-form-label col-md-3">Passwort:</label>
+              <div class="col-md-9">
+                <input class="form-control" id="password-input" type="password" name="password"
+                  [(ngModel)]="passwordInput" required>
+              </div>
+            </div>
+            <div class="row justify-content-end mt-4">
+              <div class="col-md-9">
+                <button type="submit" class="btn btn-primary w-100" [disabled]="!logInForm.form.valid">
+                  <i [hidden]="inProcess !== true" class="fa fa-spinner fa-spin mr-2"></i>
+                  <span>Anmelden</span>
+                </button>
+                <div [hidden]="loginFailed !== true">
+                  <div class="d-flex flew-row align-items-center justify-content-center mt-3 text-danger">
+                    <i class="fa fa-exclamation-triangle" style="font-size: 1.5rem;"></i>
+                    <span class="ml-2">Anmeldedaten ungültig</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

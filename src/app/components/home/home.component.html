@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card border-0 mt-3 mb-3">
+    <div class="card-body">
+      <h4 class="card-title mb-4" [innerText]="'Willkomen, ' + userData.firstName + '!'"></h4>
+      <div class="row">
+        <div class="col-md-4 mb-2">
+          <img class="img-fluid rounded" [src]="userData.image">
+        </div>
+        <div class="col-md-8 d-flex flex-column">
+          <p class="card-text" [innerText]="userData.firstName + ' ' + userData.lastName"></p>
+          <p class="card-text" [innerText]="userData.eMail"></p>
+        </div>
+      </div>
+      <div class="row justify-content-end mt-3">
+        <div class="col-md-3">
+          <button type="button" class="btn btn-primary w-100" (click)="logOut()">
+            <span>Abmelden</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
